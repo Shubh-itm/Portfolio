@@ -10,6 +10,14 @@
       "StackName": "amplify-portfolio-dev-03834",
       "StackId": "arn:aws:cloudformation:ap-south-1:673286529041:stack/amplify-portfolio-dev-03834/39c3c4a0-f4e6-11ed-8955-06e5c363c984",
       "AmplifyAppId": "dmnds4s7zykat"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dmnds4s7zykat",
+          "type": "cicd"
+        }
+      }
     }
   }
 }
