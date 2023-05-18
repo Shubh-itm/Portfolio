@@ -2,12 +2,13 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Experience } from '../typings';
 import { urlFor } from '@/sanity';
+import dynamic from 'next/dynamic';
 
 type Props = {
     experience: Experience;
 }
 
-export default function ExperienceCard({experience}: Props) {
+function ExperienceCard({experience}: Props) {
   return (
     <article className="flex flex-col rounded-lg items-center  space-y-auto flex-shrink-0  sm:h-[650px] sm:w-[600px] md:h-[550px] md:w-[700px]  xl:h-[auto] xl:w-[800px] 
     snap-center bg-[#292929] py-2 px-5 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
@@ -51,3 +52,5 @@ export default function ExperienceCard({experience}: Props) {
     </article>
   )
 }
+
+export default dynamic(() => Promise.resolve(ExperienceCard), {ssr: false})

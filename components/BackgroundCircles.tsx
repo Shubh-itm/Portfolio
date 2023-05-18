@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import React from 'react'
 
 type Props = {}
@@ -25,4 +26,4 @@ function BackgroundCircles({} : Props) {
   );
 }
 
-export default BackgroundCircles;
+export default dynamic(() => Promise.resolve(BackgroundCircles), {ssr: false})
