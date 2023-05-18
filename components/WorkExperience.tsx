@@ -2,12 +2,13 @@ import React from 'react'
 import {motion} from "framer-motion"
 import ExperienceCard from './ExperienceCard'
 import { Experience } from '../typings'
+import dynamic from 'next/dynamic'
 
 type Props = {
   experiences: Experience[];
 }
 
-export default function WorkExperience({experiences}: Props) {
+function WorkExperience({experiences}: Props) {
   return (
     <motion.div 
           initial={{
@@ -30,3 +31,4 @@ export default function WorkExperience({experiences}: Props) {
     </motion.div>
   )
 }
+export default dynamic(() => Promise.resolve(WorkExperience), {ssr: false})

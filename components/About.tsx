@@ -2,12 +2,13 @@ import { urlFor } from '@/sanity'
 import { PageInfo } from '../typings'
 import { motion } from 'framer-motion'
 import React from 'react'
+import dynamic from "next/dynamic";
 
 type Props = {
   pageInfo: PageInfo
 }
 
-export default function About({pageInfo}: Props) {
+function About({pageInfo}: Props) {
   return (
     <motion.div
        initial={{
@@ -47,3 +48,4 @@ export default function About({pageInfo}: Props) {
     </motion.div>
   )
 }
+export default dynamic(() => Promise.resolve(About), {ssr: false})

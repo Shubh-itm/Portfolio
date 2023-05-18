@@ -2,13 +2,14 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Skill } from '../typings';
 import { urlFor } from '@/sanity';
+import dynamic from 'next/dynamic';
 
 type Props = {
   skill:Skill;
     directionLeft?: boolean;
 }
 
-export default function Skill({skill, directionLeft}: Props) {
+function Skill({skill, directionLeft}: Props) {
   return (
     <div className="group relative flex cusrsor-pointer">
       {skill.image &&(
@@ -33,3 +34,4 @@ export default function Skill({skill, directionLeft}: Props) {
     </div>
   )
 }
+export default dynamic(() => Promise.resolve(Skill), {ssr: false})

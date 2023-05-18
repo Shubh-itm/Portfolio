@@ -2,12 +2,13 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Skill from './Skill'
 import { Skill as SkillType } from '../typings'
+import dynamic from 'next/dynamic'
 
 type Props = {
   skills:SkillType[];
 }
 
-export default function Skills({skills}: Props) {
+function Skills({skills}: Props) {
   return (
     <motion.div 
         initial={{opacity:0,}}
@@ -32,3 +33,4 @@ export default function Skills({skills}: Props) {
     </motion.div>
   )
 }
+export default dynamic(() => Promise.resolve(Skills), {ssr: false})
