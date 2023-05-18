@@ -4,12 +4,13 @@ import BackgroundCircles from "./BackgroundCircles";
 import Link from 'next/link';
 import { PageInfo } from "../typings";
 import { urlFor } from '@/sanity'
+import dynamic from 'next/dynamic';
 
 type Props = {
     pageInfo: PageInfo;
 }
 
-export default function hero({pageInfo}: Props) {
+function hero({pageInfo}: Props) {
     const [text, count] = useTypewriter ({        
         
         words:[
@@ -63,3 +64,4 @@ export default function hero({pageInfo}: Props) {
     </div>
   )
 }
+export default dynamic(() => Promise.resolve(hero), {ssr: false})

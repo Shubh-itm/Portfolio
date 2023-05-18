@@ -3,12 +3,13 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { Project } from '../typings';
 import { urlFor } from '@/sanity';
+import dynamic from 'next/dynamic';
 
 type Props = {
   projects: Project[];
 }
 
-export default function Projects({projects}: Props) {
+function Projects({projects}: Props) {
   return (
     <motion.div
     initial={{opacity:0,}} 
@@ -68,3 +69,4 @@ export default function Projects({projects}: Props) {
     </motion.div>
   );
 }
+export default dynamic(() => Promise.resolve(Projects), {ssr: false})
