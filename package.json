@@ -35,10 +35,7 @@
   "devDependencies": {
     "@sanity/cli": "^3.9.0",
     "tailwind-scrollbar": "^3.0.0"
-  },
-  "resolutions": {
-    "@sanity/base/react": "18.2.0",
-    "@sanity/base/react-dom": "18.2.0"
   }
+  
   
 }
