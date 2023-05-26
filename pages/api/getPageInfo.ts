@@ -3,7 +3,7 @@ import { groq } from "next-sanity";
 import { sanityClient } from "../../sanity";
 import { PageInfo } from "../../typings";
 
-const query = groq`
+const URLSearchParams = `
 *[_type == "pageInfo"][0]
 `;
 
@@ -15,6 +15,6 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
   ) {
-    const pageInfo: PageInfo = await sanityClient.fetch(query);
+    const pageInfo: PageInfo = await sanityClient.fetch(URLSearchParams);
     res.status(200).json({ pageInfo });
   }

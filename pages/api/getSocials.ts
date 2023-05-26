@@ -3,7 +3,7 @@ import { groq } from "next-sanity";
 import { sanityClient } from "../../sanity";
 import { Social } from "../../typings";
 
-const query = groq`
+const URLSearchParams = `
 *[_type == "social"]
 `
 type Data={
@@ -14,6 +14,6 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
   ) {
-    const socials: Social[] = await sanityClient.fetch(query);
+    const socials: Social[] = await sanityClient.fetch(URLSearchParams);
     res.status(200).json({ socials })
   }
