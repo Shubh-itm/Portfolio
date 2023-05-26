@@ -5,12 +5,13 @@ import Link from 'next/link';
 import { PageInfo } from "../typings";
 import { urlFor } from '@/sanity'
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 type Props = {
     pageInfo: PageInfo;
 }
 
-function hero({pageInfo}: Props) {
+function Hero({pageInfo}: Props) {
     const [text, count] = useTypewriter ({        
         
         words:[
@@ -25,7 +26,7 @@ function hero({pageInfo}: Props) {
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-h">
         <BackgroundCircles/>
         
-        <img className="relative rounded-full h-32 w-32 mx-auto object-cover" 
+        <Image className="relative rounded-full h-32 w-32 mx-auto object-cover" height={32} width={32}
         src={urlFor(pageInfo?.heroImage).url()} alt=""
         />
          
@@ -64,4 +65,4 @@ function hero({pageInfo}: Props) {
     </div>
   )
 }
-export default dynamic(() => Promise.resolve(hero), {ssr: false})
+export default dynamic(() => Promise.resolve(Hero), {ssr: false})

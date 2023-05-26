@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Experience } from '../typings';
 import { urlFor } from '@/sanity';
 import dynamic from 'next/dynamic';
+import Image from 'next/image'
 
 type Props = {
     experience: Experience;
@@ -31,9 +32,10 @@ function ExperienceCard({experience}: Props) {
             <div className="flex space-x-4 my-1">
                 
                 {experience.technologies.map((technology) => (
-                    <img  key={technology._id}
-                    className="h-6 w-6 rounded-full"
+                    <Image  key={technology._id}
+                    className="h-6 w-6 rounded-full" height={6} width={6}
                     src={urlFor(technology.image).url()}
+                    alt=""
                     />
                 ))}
             </div>
