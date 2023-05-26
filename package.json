@@ -40,5 +40,9 @@
     "@types/glob": "^8.1.0",
     "@types/minimatch": "^5.1.2",
     "tailwind-scrollbar": "^3.0.0"
-  }
+  },
+  "cacheDirectories": [
+    "client/node_modules",
+    "server/node_modules"
+  ]
 }
