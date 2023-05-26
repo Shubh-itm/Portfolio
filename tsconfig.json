@@ -18,6 +18,13 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "sanity/schemas/experience.js", "sanity/schemas/schema.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "sanity/schemas/experience.js",
+    "sanity/schemas/schema.js"
+  ],
+  "exclude": ["node_modules"],
+  "types": ["glob"]
 }
