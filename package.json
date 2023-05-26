@@ -13,6 +13,7 @@
     "@portabletext/react": "^3.0.0",
     "@sanity/base": "^2.36.1",
     "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.11.3",
     "@types/node": "18.15.11",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
