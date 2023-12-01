@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Project } from '../typings';
 import { urlFor } from '@/sanity';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 type Props = {
   projects: Project[];
@@ -21,7 +22,7 @@ function Projects({projects}: Props) {
         </h3>
 
         <div className="relative w-screen items-center text-center justify-center flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 
-        scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 sm:h-[700px] sm:w-[600px] md:h-[400px] md:w-[auto] xl:w-[auto] xl:h-[auto]">
+         scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 sm:h-[700px] sm:w-[600px] md:h-[400px] md:w-[auto] xl:w-[auto] xl:h-[auto]">
           {projects?.map((project, i) => (
             <div key={project._id} className="flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44">
               <motion.img 
@@ -43,7 +44,7 @@ function Projects({projects}: Props) {
 
                   <div className="flex items-center space-x-2 justify-center">
                     {project?.technologies.map((technology) => (
-                    <img className="h-10 w-10"
+                    <Image className="h-10 w-10" height={10} width={10}
                     key={technology._id}
                     src={technology.image && urlFor(technology.image).url()}
                     // src={urlFor(technology.image).url()}
